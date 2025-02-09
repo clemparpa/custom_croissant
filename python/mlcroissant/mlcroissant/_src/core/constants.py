@@ -219,6 +219,8 @@ class EncodingFormat:
     TSV = "text/tab-separated-values"
     TAR = "application/x-tar"
     ZIP = "application/zip"
+    XLSX = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    XLS = "application/vnd.ms-excel"
 
 
 class DataType:

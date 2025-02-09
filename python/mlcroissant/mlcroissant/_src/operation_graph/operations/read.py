@@ -93,6 +93,11 @@ class Read(Operation):
             # TODO(https://github.com/mlcommons/croissant/issues/635).
             if filepath.suffix == ".gz":
                 file = gzip.open(file, "rt", newline="")
+            if encoding_format in [EncodingFormat.XLS, EncodingFormat.XLSX]:
+                try: 
+                    return pd.read_excel(file)
+                except:
+                    return pd.read_csv(file)                    
             if encoding_format == EncodingFormat.CSV:
                 return pd.read_csv(file)
             elif encoding_format == EncodingFormat.TSV:
